@@ -1,0 +1,43 @@
+package com.spring.mvc.controller;
+
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CookieValue;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+@RequestMapping("/cookie")
+public class CookieController {
+
+	@GetMapping("/set-cookie")
+	public String setCookie(@CookieValue(value="name", defaultValue="Arbaz") String name, HttpServletResponse res){
+		
+		Cookie ck = new Cookie("name", name);
+		res.addCookie(ck);
+		ck.setHttpOnly(true);
+		ck.setMaxAge(5000);
+		return "getCookie";
+	}
+	
+	@GetMapping("/get-cookie")
+	public void getCookie(HttpServletRequest req, @CookieValue(value = "name", defaultValue = "defaultValue") String cookieName){
+	 
+		 Cookie[] cookies = req.getCookies();
+	        if (cookies != null) {
+	            for (Cookie cookie : cookies) {
+	                if (cookie.getName().equals("name")) {
+	                    return "Cookie value: " + cookie.getValue();
+	                }
+	            }
+	        }
+	}
+	
+	@GetMapping("/remove-cookie")
+	public void removeCookie(HttpServletResponse res){
+	
+	}
+}

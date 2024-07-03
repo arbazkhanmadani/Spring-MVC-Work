@@ -1,0 +1,57 @@
+package com.spring.mvc.controller;
+
+import java.util.LinkedList;
+import java.util.List;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.servlet.view.RedirectView;
+
+@Controller
+//@RequestMapping("/redirect")
+public class RedirectionController {
+
+	@RequestMapping("/prefix-redirect")
+	public String prefixRedirect(){
+		System.out.println("prefix-redirect.........");
+		return "redirect:/redirect-view-pre";
+	}
+	@RequestMapping("/redirect-view-pre")
+	public String redirectViewPrefix(){
+		System.out.println("prefix-redirect.........");
+		return "redirectView";
+	}
+	
+	@RequestMapping("/redirect-view")
+	public RedirectView redirectView(){
+		System.out.println("prefix-redirect.........");
+		
+		RedirectView rw = new RedirectView();
+		rw.setUrl("https://www.google.com");
+		return rw;
+	}
+	
+	@RequestMapping("/path-var/{id}/{name}")
+	public String pathVarView(@PathVariable int id,@PathVariable String name, Model model){
+	
+		List al = new LinkedList();
+		al.add(id);
+		al.add(name);
+		model.addAttribute("list", al);
+		return "pathVarView";
+	}
+	
+	//Controller specific exception handler.
+	@ResponseStatus(value=HttpStatus.NON_AUTHORITATIVE_INFORMATION)
+	@ExceptionHandler({NullPointerException.class, Exception.class})
+	public String HandleException(){
+		
+		return null;
+	}
+	
+}

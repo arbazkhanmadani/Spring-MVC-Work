@@ -1,0 +1,10 @@
+package com.spring.mvc.controller;
+
+import org.springframework.web.bind.annotation.ControllerAdvice;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@ControllerAdvice
+@RequestMapping("/student");
+public class StudentController {
+
+}

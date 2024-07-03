@@ -1,0 +1,6 @@
+
+Jul 01, 2024 22:37:19.891 NEW SESSION
+Jul 01, 2024 22:37:19.891 Created TensorFlow Lite XNNPACK delegate for CPU.
+Jul 01, 2024 22:42:35.451 [17648:33684:0701/224235.450:ERROR:chrome_web_ui_controller_factory.cc(520)] Requested load of chrome://newtab/ for incorrect profile type.
+Jul 01, 2024 23:44:30.210 [17648:32924:0701/234430.209:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+Jul 01, 2024 23:56:30.729 [17648:32924:0701/235630.727:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -7

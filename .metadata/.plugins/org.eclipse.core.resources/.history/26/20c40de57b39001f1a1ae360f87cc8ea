@@ -1,0 +1,11 @@
+package com.spring.mvc.entities;
+
+import javax.persistence.*;
+
+@Entity
+public class Student {
+
+	@Id
+	private int rollNo;
+	private String name;
+}

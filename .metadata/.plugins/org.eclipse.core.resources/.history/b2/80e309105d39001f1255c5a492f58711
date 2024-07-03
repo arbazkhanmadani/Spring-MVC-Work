@@ -1,0 +1,27 @@
+package com.spring.mvc.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CookieValue;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+@RequestMapping("/cookie")
+public class CookieController {
+
+	@GetMapping("set-cookie")
+	public String setCookie(@CookieValue(name="name", value="Arbaz") int name){
+		
+		return "cookie set...........";
+	}
+	
+	@GetMapping("set-cookie")
+	public void getCookie(){
+		
+	}
+	
+	@GetMapping("set-cookie")
+	public void removeCookie(){
+		
+	}
+}

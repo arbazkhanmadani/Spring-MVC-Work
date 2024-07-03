@@ -1,0 +1,9 @@
+package com.spring.mvc.entities;
+
+@Entity
+public class Student {
+
+	
+	private int rollNo;
+	private String name;
+}

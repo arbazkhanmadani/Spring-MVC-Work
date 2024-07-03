@@ -1,0 +1,15 @@
+package com.spring.mvc.dao;
+
+import org.springframework.orm.hibernate5.HibernateTemplate;
+
+import com.spring.mvc.entities.Student;
+
+public class StudentDAO {
+
+	private HibernateTemplate hibenateTemplate;
+	
+	private void save(Student s){
+		hibenateTemplate.save(s);
+	}
+	
+}

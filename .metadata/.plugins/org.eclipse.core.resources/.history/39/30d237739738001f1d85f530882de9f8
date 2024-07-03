@@ -1,0 +1,14 @@
+@Controller
+public class ErrorController implements ErrorController {
+
+    @RequestMapping("/error")
+    public String handleError(HttpServletRequest request) {
+        // Your error handling logic
+        return "error"; // or return the name of your custom error view
+    }
+
+    @Override
+    public String getErrorPath() {
+        return "/error";
+    }
+}

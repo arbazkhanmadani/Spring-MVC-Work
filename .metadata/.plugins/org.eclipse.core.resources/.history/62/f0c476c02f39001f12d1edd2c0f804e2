@@ -1,0 +1,27 @@
+package com.spring.mvc.controller;
+
+import org.springframework.stereotype.*;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
+
+import com.spring.mvc.entities.Person;
+import com.spring.mvc.entities.User;
+
+@Controller
+public class ComplexFormHandeling {
+
+	@GetMapping("/complex-form")
+	public String complexForm(){
+		return "complexForm";
+	}
+	
+	
+	@PostMapping("/complex-form-submit")
+	public String complexFormSubmission(@ModelAttribute Person p,Model m){
+		
+		System.out.println(p);
+		return "dataProfile";
+	}
+	
+	
+}

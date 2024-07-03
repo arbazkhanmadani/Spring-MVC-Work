@@ -1,0 +1,12 @@
+package com.spring.mvc.entities;
+
+import javax.persistence.*;
+
+@Entity
+public class Student {
+
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private int rollNo;
+	private String name;
+}

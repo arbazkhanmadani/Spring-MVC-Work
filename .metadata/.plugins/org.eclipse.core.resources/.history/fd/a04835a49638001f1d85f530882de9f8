@@ -1,0 +1,30 @@
+package com.spring.mvc.exceptions;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ControllerAdvice;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.NoHandlerFoundException;
+
+//It is used to annot as global exception handler.
+@ControllerAdvice
+public class GlobalExceptionHandler {
+
+	@ResponseStatus(value=HttpStatus.NOT_FOUND)  //
+    @ExceptionHandler(value=NoHandlerFoundException.class)
+    public ModelAndView globalHandler(HttpServletRequest request, Exception ex){
+		System.out.println("erorrr");
+		//model.addAttribute("error","exception............. is occured");
+		ModelAndView modelAndView = new ModelAndView();
+	    modelAndView.addObject("url", request.getRequestURL());
+	    modelAndView.addObject("exception", ex);
+	    modelAndView.setViewName("errorHandlerPage");
+		return modelAndView;
+    }
+}

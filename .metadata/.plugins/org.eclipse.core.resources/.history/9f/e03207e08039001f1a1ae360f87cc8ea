@@ -1,0 +1,18 @@
+package com.spring.mvc.dao;
+
+import javax.transaction.Transactional;
+import org.springframework.orm.hibernate5.HibernateTemplate;
+import com.spring.mvc.entities.Student;
+
+
+public class StudentDAO {
+
+	private HibernateTemplate hibernateTemplate;
+	
+	@Transactional
+	public int save(Student s){
+		int i = (Integer)hibernateTemplate.save(s);
+		return i;
+	}
+	
+}

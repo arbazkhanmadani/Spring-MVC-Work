@@ -1,0 +1,7 @@
+package com.spring.mvc.controller;
+
+@Controller
+@RequestMapping("/student");
+public class StudentController {
+
+}

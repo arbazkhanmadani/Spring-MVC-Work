@@ -1,0 +1,20 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<% Cookie[] ck =  request.getCookies(); %>
+
+<%= ck[0].getName() %>
+<%= ck[0].getValue() %>
+<%= ck[0].getMaxAge() %>
+<%= ck[0].getDomain() %>
+
+
+</body>
+</html>

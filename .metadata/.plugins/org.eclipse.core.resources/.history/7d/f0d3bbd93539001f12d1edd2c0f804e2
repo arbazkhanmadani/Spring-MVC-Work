@@ -1,0 +1,6 @@
+package com.spring.mvc.entities;
+
+public class College {
+
+	private String collegeName;
+}

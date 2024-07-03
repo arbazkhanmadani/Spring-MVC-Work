@@ -1,0 +1,42 @@
+package com.spring.mvc.controller;
+
+import org.springframework.stereotype.*;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.view.RedirectView;
+
+import com.spring.mvc.entities.Person;
+import com.spring.mvc.entities.User;
+
+@Controller
+public class ComplexFormHandeling {
+
+	@GetMapping("/complex-form")
+	public String complexForm(){
+		return "complexForm";
+	}
+	
+	@GetMapping("/complex-form-submit")
+	public String complexForm(){
+		return "dataProfile";
+	}
+	
+	@PostMapping("/complex-form-submit")
+	public RedirectView complexFormSubmission(@ModelAttribute Person p,Model m){
+		m.addAttribute("person",p);
+		System.out.println(p);
+		
+		RedirectView rw = new RedirectView();
+		
+		if("on".equalsIgnoreCase(p.getCheck()) ){
+			rw.setUrl("/spring-mvc/complex-form-submit");
+			return rw;
+		}
+		else{ 
+			rw.setUrl("/spring-mvc/complex-form");
+			return rw;
+		}
+	}
+	
+	
+}

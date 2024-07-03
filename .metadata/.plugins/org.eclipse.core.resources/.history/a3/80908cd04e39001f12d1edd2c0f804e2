@@ -1,0 +1,6 @@
+package com.spring.mvc.controller;
+
+@Controller
+public class SessionController {
+
+}

@@ -1,0 +1,22 @@
+package com.spring.mvc.controller;
+
+import org.springframework.stereotype.*;
+import org.springframework.web.bind.annotation.*;
+
+@Controller
+public class ComplexFormHandeling {
+
+	@GetMapping("/complex-form")
+	public String complexForm(){
+		return "complexForm";
+	}
+	
+	
+	@PostMapping("/complex-form-submit")
+	public String complexFormSubmission(@ModelAttribute Model m){
+		
+		return "dataProfile";
+	}
+	
+	
+}

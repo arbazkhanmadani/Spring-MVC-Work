@@ -1,0 +1,7 @@
+package com.spring.mvc.helper;
+
+public class CustomError {
+
+	private int statusCod;
+	private String status;
+}

@@ -1,0 +1,22 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1" isELIgnored="false"%>
+<%@ page import="java.util.*" %>
+<%@ page import="com.spring.mvc.entities.*" %>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+<% 
+	List<Student> s =  (List<Student>)request.getAttribute("studentList");
+	for(int i = 0; i<s.size(); i++){ %>
+
+<%	} %>
+</body>
+</html>

@@ -1,0 +1,106 @@
+package com.spring.mvc.entities;
+
+import java.util.Date;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
+public class Person {
+
+	private String email;
+	private String pass;
+	private String addr1;
+	private String addr2;
+	private String city;
+	private String state;
+	private String zip;
+	private String check;
+	@DateTimeFormat(pattern="dd-mm-yyyy")
+	private Date date;
+	private College clg ;
+	
+	public Date getDate() {
+		return date;
+	}
+	public void setDate(Date date) {
+		this.date = date;
+	}
+	public Person(String email, String pass, String addr1, String addr2, String city, String state, String zip,
+			String check, Date date) {
+		super();
+		this.email = email;
+		this.pass = pass;
+		this.addr1 = addr1;
+		this.addr2 = addr2;
+		this.city = city;
+		this.state = state;
+		this.zip = zip;
+		this.check = check;
+		this.date = date;
+	}
+	@Override
+	public String toString() {
+		return "Person [email=" + email + ", pass=" + pass + ", addr1=" + addr1 + ", addr2=" + addr2 + ", city=" + city
+				+ ", state=" + state + ", zip=" + zip + ", check=" + check + ", date=" + date + "]";
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getPass() {
+		return pass;
+	}
+	public void setPass(String pass) {
+		this.pass = pass;
+	}
+	public String getAddr1() {
+		return addr1;
+	}
+	public void setAddr1(String addr1) {
+		this.addr1 = addr1;
+	}
+	public String getAddr2() {
+		return addr2;
+	}
+	public void setAddr2(String addr2) {
+		this.addr2 = addr2;
+	}
+	public String getCity() {
+		return city;
+	}
+	public void setCity(String city) {
+		this.city = city;
+	}
+	public String getState() {
+		return state;
+	}
+	public void setState(String state) {
+		this.state = state;
+	}
+	public String getZip() {
+		return zip;
+	}
+	public void setZip(String zip) {
+		this.zip = zip;
+	}
+	public String getCheck() {
+		return check;
+	}
+	public void setCheck(String check) {
+		this.check = check;
+	}
+	public Person(String email, String pass, String addr1, String addr2, String city, String state, String zip,
+			String check) {
+		super();
+		this.email = email;
+		this.pass = pass;
+		this.addr1 = addr1;
+		this.addr2 = addr2;
+		this.city = city;
+		this.state = state;
+		this.zip = zip;
+		this.check = check;
+	}
+	
+}

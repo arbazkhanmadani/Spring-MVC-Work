@@ -1,0 +1,22 @@
+package com.spring.mvc.exceptions;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.util.ErrorHandler;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class ErrorController implements ErrorHandler {
+
+    @RequestMapping("/error-handler-page")
+    public String handleError(HttpServletRequest request) {
+        // Your error handling logic
+        return "errorHandlerPage"; // or return the name of your custom error view
+    }
+
+    @Override
+    public String getErrorPath() {
+        return "/error";
+    }
+}
